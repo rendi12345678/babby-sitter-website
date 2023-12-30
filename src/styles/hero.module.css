@@ -1,0 +1,30 @@
+.hero {
+  height: 100svh;
+  width: 100svw;
+  background: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info {
+  position: relative;
+  display: grid;
+  align-content: center;
+  padding: var(--white-space);
+}
+
+.info p {
+  max-width: 57ch;
+}
+
+.hero figure {
+  width: 95%;
+  justify-self: end;
+  height: 80%;
+  align-self: end;
+  overflow: hidden;
+  background: url(/public/img/hero4.jpg) 100% / 100% 100% no-repeat;
+  order: 2;
+  border-radius: 100% 0 0 0;
+  z-index: 99999;
+}
