@@ -12,13 +12,13 @@ export const Navbar = () => {
                     <HashLink>Home</HashLink>
                 </li>
                 <li>
-                    <HashLink>About Us</HashLink>
+                    <HashLink>About Me</HashLink>
                 </li>
                 <li>
                     <HashLink>Gallery</HashLink>
                 </li>
                 <li>
-                    <HashLink>Contact Us</HashLink>
+                    <HashLink>Contact Me</HashLink>
                 </li>
             </ul>
         </nav>
