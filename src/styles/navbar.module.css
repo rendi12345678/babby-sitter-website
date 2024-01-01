@@ -1,14 +1,13 @@
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     height: 8rem;
     background: var(--secondary-color);
     display: flex;
     justify-content: space-between;
-    padding: 0 var(--white-space);
+    z-index: 999999;
+    margin: auto;
     align-items: center;
+    max-width: var(--max-width);
 }
 
 .header h4 {
@@ -38,10 +37,4 @@
 
 .header div > button {
     margin-top: 0;
-}
-
-.header div > button:first-child {
-    background: transparent;
-    border: .1rem solid var(--accent-color);
-    color: var(--accent-color);
 }

@@ -6,11 +6,10 @@
 }
 
 .about div:first-child {
-    grid-column: 1 / -1;
-    text-align: center;
     width: 100%;
     display: grid;
-    justify-content: center;
+    justify-content: start;
+    text-align: start;
 }
 
 .image {
@@ -48,5 +47,6 @@
 
 .info {
     display: grid;
-    align-items: center;
+    align-content: center;
+    justify-content: start;
 }

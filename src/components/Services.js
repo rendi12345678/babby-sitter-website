@@ -6,7 +6,7 @@ export const Services = () => {
     <section className={servicesStyle.services}>
       <div className='section-title'>
         <h2>My Services</h2>
-        <p>What do we offer</p>
+        <p>What we offer</p>
       </div>
       <div className={servicesStyle["service-list"]}>
         <div>

@@ -65,10 +65,12 @@ table {
   --h4: 1.8rem;
   --body-text: 1.6rem;
   --max-width: 140rem;
+  --border-radius: 1.2rem;
 }
 
 body {
 	background: var(--primary-color);
+	overflow-x: hidden;
 }
 
 .section-title {
@@ -137,9 +139,14 @@ button {
 	background: var(--accent-color);
 	color: var(--primary-color);
 	padding: .7rem 2rem;
+	border-radius: var(--border-radius);
 	margin-top: 2rem;
 	font-weight: bold;
 	width: fit-content;
+}
+
+img {
+	border-radius: var(--border-radius);
 }
 
 

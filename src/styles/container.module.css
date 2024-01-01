@@ -5,10 +5,37 @@
     padding: calc(var(--white-space) * 2) var(--white-space);
 }
 
-.services-container {
+.container2 {
     display: grid;
     justify-content: center;
     width: 100svw;
     grid-template-columns: 1fr;
-    padding: calc(var(--white-space) * 2) var(--white-space);
+    background: var(--secondary-color);
+    padding: var(--white-space);
+}
+
+.navbar-container {
+    display: grid;
+    padding: 0 var(--white-space);
+    justify-content: center;
+    width: 100svw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.hero-container {
+    display: grid;
+    position: relative;
+    padding: 0 var(--white-space);
+    justify-content: center;
+    width: 100svw;
+    height: 100svh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background: var(--secondary-color);
 }

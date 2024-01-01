@@ -29,8 +29,7 @@ export const Navbar = () => {
             </ul>
         </nav>
         <div>
-            <button>Sign Up</button>
-            <button>Login</button>
+            <button>Call Me Now</button>
         </div>
     </header>
   )

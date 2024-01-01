@@ -1,0 +1,44 @@
+.testimonials {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: auto;
+  max-width: var(--max-width);
+}
+
+.testimonial-list {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: var(--white-space);
+}
+
+.testimonial {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+}
+
+.testimonial > div {
+    background: var(--primary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.testimonial figure {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.testimonial figure figcaption {
+    font-size: var(--h4);
+}
+
+.testimonial figure img {
+    width: 3rem;
+    border-radius: 50%;
+    height: 3rem
+}
