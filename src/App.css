@@ -118,7 +118,7 @@ h4 {
 	margin-bottom: .5rem;
 }
 
-p, button, a {
+p, button, a, label, input, input::placeholder {
 	font-family: Helvetica, sans-serif;
 	font-size: var(--body-text);
 	line-height: 1.5;

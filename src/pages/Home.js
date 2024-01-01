@@ -5,6 +5,8 @@ import { Hero } from "../components/Hero.js";
 import { About } from "../components/About.js";
 import { Services } from "../components/Services.js";
 import { Testimonials } from "../components/Testimonials.js";
+import { Gallery } from "../components/Gallery.js";
+import { Contact } from "../components/Contact.js";
 
 export const Home = () => {
   return (
@@ -21,6 +23,10 @@ export const Home = () => {
       </div>
       <div className={containerStyles.container2}>
         <Testimonials />
+      </div>
+      <div className={containerStyles.container}>
+        <Gallery/>   
+        <Contact/>
       </div>
     </>
   );

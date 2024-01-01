@@ -1,0 +1,22 @@
+.gallery {
+  max-width: var(--max-width);
+  width: 100%;
+  overflow-x: auto;
+  overflow-x: auto;
+}
+
+.gallery-list {
+   display: grid;
+   grid-auto-flow: column;
+   grid-auto-columns: 20rem;
+   gap: 2rem;
+}
+
+.item {
+    width: 100%;
+}
+
+.item img {
+   width: 100%;
+   aspect-ratio: 1/1;
+}
