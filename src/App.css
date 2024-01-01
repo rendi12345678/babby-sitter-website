@@ -48,18 +48,22 @@ table {
 	border-spacing: 0;
 }
 
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
 /* Root */
 :root {
 	font-size: 62.5%;
-  --h1: 4.2rem;
+  --h1: 4rem;
   --column-gap: 4rem;
   --h2: 3.2rem;
-  --accent-color: #ff00c8;
+  --accent-color: #e708b7;
   --secondary-color: #eee;
   --primary-color: #fff;
   --white-space: 4.2rem;
-  --h3: 2.2rem;
-  --body-text: 1.8rem;
+  --h3: 2.8rem;
+  --h4: 1.8rem;
+  --body-text: 1.6rem;
   --max-width: 140rem;
 }
 
@@ -69,7 +73,10 @@ body {
 
 .section-title {
 	text-align: center;
+	display: grid;
+	justify-content: center;
 	margin-bottom: 4rem;
+	width: 100%;
 }
 
 .section-title p {
@@ -79,7 +86,7 @@ body {
 
 h1 {
 	font-size: var(--h1);
-	font-family: Arial, serif;
+	font-family: "Open Sans", sans-serif;
 	text-wrap: balance;
 	margin-bottom: 2rem;
 	font-weight: bold;
@@ -89,36 +96,47 @@ h1 {
 h2 {
 	font-size: var(--h2);
 	line-height: 1.1;
-	font-family: Arial, serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: bold;
 }
 
 h3 {
 	font-size: var(--h3);
 	line-height: 1.1;
-	font-family: Arial, serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: bold;
+	margin-bottom: 1.5rem;
+}
+
+h4 {
+	font-size: var(--h4);
+	line-height: 1.1;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	margin-bottom: .5rem;
 }
 
 p, button, a {
 	font-family: Helvetica, sans-serif;
 	font-size: var(--body-text);
 	line-height: 1.5;
-	color: #555;
+	color: #444;
 	font-weight: 520;
 	max-width: 70ch;
 }
 
 a {
+	font-size: calc(var(--body-text));
 	text-decoration: none;
 	color: #444;
 }
 
 button {
 	border: 0;
+	font-size: calc(var(--body-text));
 	background: var(--accent-color);
 	color: var(--primary-color);
-	padding: 1rem 3rem;
+	padding: .7rem 2rem;
 	margin-top: 2rem;
 	font-weight: bold;
 	width: fit-content;

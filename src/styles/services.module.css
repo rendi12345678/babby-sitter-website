@@ -1,0 +1,24 @@
+.services {
+    max-width: var(--max-width);
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+
+}
+
+.service-list {
+    display: grid;
+    width: 100%;
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+.service-list > div h3 {
+    color: #333;
+    opacity: .2;
+}
+
+

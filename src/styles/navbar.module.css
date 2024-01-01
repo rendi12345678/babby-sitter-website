@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 6.5rem;
+    height: 8rem;
     background: var(--secondary-color);
     display: flex;
     justify-content: space-between;
@@ -11,17 +11,17 @@
     align-items: center;
 }
 
-.header h3 {
+.header h4 {
     margin-bottom: 0;
 }
 
-.header h3::after {
+.header h4::after {
   content: " Nanny";
   color: var(--accent-color);
 }
 
 .header nav {
-    width: 35%;
+    width: 50%;
 }
 
 .header nav ul {
@@ -29,4 +29,19 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+
+.header div {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.header div > button {
+    margin-top: 0;
+}
+
+.header div > button:first-child {
+    background: transparent;
+    border: .1rem solid var(--accent-color);
+    color: var(--accent-color);
 }

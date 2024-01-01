@@ -4,3 +4,11 @@
     width: 100svw;
     padding: calc(var(--white-space) * 2) var(--white-space);
 }
+
+.services-container {
+    display: grid;
+    justify-content: center;
+    width: 100svw;
+    grid-template-columns: 1fr;
+    padding: calc(var(--white-space) * 2) var(--white-space);
+}
