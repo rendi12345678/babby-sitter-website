@@ -76,6 +76,7 @@ body {
 .section-title {
 	text-align: center;
 	display: grid;
+	align-items: start;
 	justify-content: center;
 	margin-bottom: 4rem;
 	width: 100%;
@@ -118,13 +119,28 @@ h4 {
 	margin-bottom: .5rem;
 }
 
-p, button, a, label, input, input::placeholder {
+p, button, a, label, input, input::placeholder, textarea::placeholder, textarea {
 	font-family: Helvetica, sans-serif;
 	font-size: var(--body-text);
 	line-height: 1.5;
 	color: #444;
 	font-weight: 520;
 	max-width: 70ch;
+}
+
+label {
+	height: 100%;
+	width: 100%;
+	color: #000;
+}
+
+input, textarea {
+	padding: .5rem;
+	color: #333;
+}
+
+input::placeholder, textarea::placeholder {
+	color: #888;
 }
 
 a {
@@ -149,4 +165,6 @@ img {
 	border-radius: var(--border-radius);
 }
 
-
+label {
+	font-weight: 600;
+}
