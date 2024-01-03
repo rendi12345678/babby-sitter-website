@@ -81,6 +81,7 @@ table {
 body {
 	background: var(--primary-color);
 	overflow-x: hidden;
+	-ms-text-size-adjust: none;
 }
 
 .section-title {
@@ -105,9 +106,9 @@ body {
 h1 {
 	font-size: var(--h1);
 	font-family: "Open Sans", sans-serif;
-	text-wrap: balance;
+	white-space: nowrap;
 	margin-bottom: var(--title-space);
-	font-weight: bold;
+	font-weight: 700;
 	line-height: 1.1;
 }
 
@@ -115,14 +116,14 @@ h2 {
 	font-size: var(--h2);
 	line-height: 1.1;
 	font-family: "Open Sans", sans-serif;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 h3 {
 	font-size: var(--h3);
 	line-height: 1.1;
 	font-family: "Open Sans", sans-serif;
-	font-weight: bold;
+	font-weight: 700;
 	margin-bottom: var(--title-space);
 }
 
@@ -130,7 +131,7 @@ h4 {
 	font-size: var(--h4);
 	line-height: 1.1;
 	font-family: "Open Sans", sans-serif;
-	font-weight: bold;
+	font-weight: 700;
 	margin-bottom: .5rem;
 }
 
@@ -230,5 +231,5 @@ img {
 }
 
 label {
-	font-weight: 600;
+	font-weight: 600
 }
