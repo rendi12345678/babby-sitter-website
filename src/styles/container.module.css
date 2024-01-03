@@ -31,7 +31,6 @@
 
 .hero-container {
     display: grid;
-    position: relative;
     padding: 0 var(--white-space);
     justify-content: center;
     width: 100svw;

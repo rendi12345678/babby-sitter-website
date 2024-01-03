@@ -1,23 +1,22 @@
 .hero {
   height: 100%;
   width: 100%;
-  background: var(--secondary-color);
   display: grid;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: var(--white-space);
   max-width: var(--max-width);
+  box-sizing: border-box;
 }
 
 .info {
-  position: relative;
   display: grid;
   align-content: center;
 }
 
 .info p {
-  max-width: 57ch;
+  
 }
 
 .image {

@@ -1,5 +1,4 @@
 /*
-* Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
 * Browsers: last 4 version
@@ -26,12 +25,12 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -64,8 +63,7 @@ table {
 	font-size: 62.5%;
 	--h1: clamp(3.2rem, 4vw, 4rem);
 	--column-gap: clamp(2rem, 4.2vw, 4.2rem);
-	--title-space: clamp(1rem, 2vw, 2rem);
-	
+	--title-space: clamp(1.5rem, 2vw, 2rem);
 	--h2: clamp(2.4rem, 3.2vw, 3.2rem);
 	--accent-color: #e708b7;
 	--secondary-color: #eee;
@@ -81,26 +79,20 @@ table {
 body {
 	background: var(--primary-color);
 	overflow-x: hidden;
-	-ms-text-size-adjust: none;
 }
 
 .section-title {
 	text-align: center;
-	display: -ms-grid;
 	display: grid;
-	-webkit-box-align: start;
-	    -ms-flex-align: start;
-	        align-items: start;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	align-items: start;
+	justify-content: center;
 	margin-bottom: var(--title-space);
 	width: 100%;
 }
 
 .section-title p {
    color: var(--accent-color);
-   font-weight: 100;
+   font-weight: 500;
 }
 
 h1 {
@@ -136,11 +128,11 @@ h4 {
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-	font-family: Helvetica, sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: var(--body-text);
 	line-height: 1.5;
 	color: #444;
-	font-weight: 520;
+	font-weight: 300;
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
@@ -148,7 +140,7 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 	font-size: var(--body-text);
 	line-height: 1.5;
 	color: #444;
-	font-weight: 520;
+	font-weight: 300;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
@@ -156,7 +148,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 	font-size: var(--body-text);
 	line-height: 1.5;
 	color: #444;
-	font-weight: 520;
+	font-weight: 300;
 }
 
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
@@ -164,7 +156,7 @@ input::-ms-input-placeholder, textarea::-ms-input-placeholder {
 	font-size: var(--body-text);
 	line-height: 1.5;
 	color: #444;
-	font-weight: 520;
+	font-weight: 300;
 }
 
 p, button, a, label, input, input::placeholder, textarea::placeholder, textarea {
@@ -172,7 +164,7 @@ p, button, a, label, input, input::placeholder, textarea::placeholder, textarea 
 	font-size: var(--body-text);
 	line-height: 1.5;
 	color: #444;
-	font-weight: 520;
+	font-weight: 300;
 }
 
 label {
@@ -221,8 +213,6 @@ button {
 	border-radius: var(--border-radius);
 	margin-top: var(--title-space);
 	font-weight: bold;
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
 	width: fit-content;
 }
 
@@ -231,5 +221,5 @@ img {
 }
 
 label {
-	font-weight: 600
+	font-weight: 600;
 }
