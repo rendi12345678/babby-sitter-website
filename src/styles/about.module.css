@@ -50,3 +50,30 @@
     align-content: center;
     justify-content: start;
 }
+
+@media (width < 992px) {
+   .about {
+     grid-template-columns: 1fr;
+     row-gap: var(--column-gap);
+   }
+}
+
+@media (width < 768px) {
+   .image {
+    grid: 
+    "img1 img1" 20rem
+    "img2 img3" 20rem
+    / 20rem 20rem;
+    justify-content: center;
+  }
+}
+
+@media (width < 576px) {
+  .image {
+    grid: 
+    "img1 img1" 12rem
+    "img2 img3" 12rem
+    / 12rem 12rem;
+    justify-content: center;
+   }
+}

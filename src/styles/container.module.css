@@ -16,13 +16,14 @@
 
 .navbar-container {
     display: grid;
+    z-index: 99999999999;
     padding: 0 var(--white-space);
-    justify-content: center;
+    justify-items: center;
     width: 100svw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    background: var(--secondary-color);
     position: absolute;
+    background: var(--secondary-color);
     top: 0;
     left: 0;
     right: 0;

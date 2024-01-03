@@ -1,40 +1,94 @@
-.header {
+.navbar {
     width: 100%;
-    height: 8rem;
-    background: var(--secondary-color);
+    height: clamp(6rem, 8vw, 8rem);
     display: flex;
+    background: var(--secondary-color);
     justify-content: space-between;
     z-index: 999999;
-    margin: auto;
+    position: relative;
     align-items: center;
     max-width: var(--max-width);
+    box-shadow: 1px 1px 5px solid rgba(0,0,0,0.25);
 }
 
-.header h4 {
+.navbar h4 {
     margin-bottom: 0;
 }
 
-.header h4::after {
+.navbar h4::after {
   content: " Nanny";
   color: var(--accent-color);
 }
 
-.header nav {
-    width: 50%;
-}
-
-.header nav ul {
+.navbar ul {
     display: flex;
-    width: 100%;
+    width: 55%;
     justify-content: space-between;
     align-items: center;
 }
 
-.header div {
-    display: flex;
-    column-gap: 2rem;
+.navbar ul button {
+    display: none;
 }
 
-.header div > button {
+.navbar button {
     margin-top: 0;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+    height: 2.2rem;
+    width: 3rem;
+    z-index: 99999;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: .35rem;
+    background: #333;
+}
+
+@media (width < 992px) {
+   .navbar .navList {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100svh;
+    transform: translateY(-100%);
+    background: var(--secondary-color);
+    width: 100%;
+    padding: calc(var(--white-space) * 2) var(--white-space);
+    display: flex; 
+    flex-direction: column;
+    z-index: -9999;
+    justify-content: space-between;
+    transition: 800ms ease-in-out;
+   }
+
+   .navList.show {
+    transform: translateY(0);
+    opacity: 1;
+   }
+
+   .navbar ul button {
+    display: block;
+   }
+
+   .navbar > button {
+    display: none;
+   }
+
+   .hamburger-menu {
+    display: flex;
+   }
+
+   .navbar h4 {
+    z-index: -9999;
+   }
 }

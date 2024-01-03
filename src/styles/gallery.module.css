@@ -7,8 +7,7 @@
 
 .gallery-list {
    display: grid;
-   grid-auto-flow: column;
-   grid-auto-columns: 20rem;
+   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
    gap: 2rem;
 }
 

@@ -21,21 +21,6 @@ export const Gallery = () => {
          <figure className={galleryStyles.item}>
             <img src="/img/hero4.jpg" alt="gallery item" />
          </figure>
-         <figure className={galleryStyles.item}>
-            <img src="/img/hero4.jpg" alt="gallery item" />
-         </figure>
-         <figure className={galleryStyles.item}>
-            <img src="/img/hero4.jpg" alt="gallery item" />
-         </figure>
-         <figure className={galleryStyles.item}>
-            <img src="/img/hero4.jpg" alt="gallery item" />
-         </figure>
-         <figure className={galleryStyles.item}>
-            <img src="/img/hero4.jpg" alt="gallery item" />
-         </figure>
-         <figure className={galleryStyles.item}>
-            <img src="/img/hero4.jpg" alt="gallery item" />
-         </figure>
       </div>
     </section>
   )

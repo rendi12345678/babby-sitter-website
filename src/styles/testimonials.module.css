@@ -34,11 +34,11 @@
 }
 
 .testimonial figure figcaption {
-    font-size: var(--h4);
+    font-size: var(--body-text);
 }
 
 .testimonial figure img {
-    width: 3rem;
+    width: 2rem;
     border-radius: 50%;
-    height: 3rem
+    height: 2rem
 }

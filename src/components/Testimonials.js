@@ -37,20 +37,6 @@ export const Testimonials = () => {
             <figcaption>Velicity</figcaption>
           </figure>
         </div>
-        <div className={testimonialsStyles.testimonial}>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque,
-              eum aliquid enim iusto quasi ea cum voluptate porro, eligendi
-              dolorem accusamus veritatis unde omnis molestiae sit corrupti.
-              Saepe, sed sapiente.
-            </p>
-          </div>
-          <figure>
-            <img src="/img/hero.jpg" alt="profile" />
-            <figcaption>Velicity</figcaption>
-          </figure>
-        </div>
       </div>
     </section>
   );
