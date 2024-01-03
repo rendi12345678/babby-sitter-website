@@ -26,7 +26,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
   box-sizing: border-box;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -98,7 +97,6 @@ body {
 h1 {
 	font-size: var(--h1);
 	font-family: "Open Sans", sans-serif;
-	white-space: nowrap;
 	margin-bottom: var(--title-space);
 	font-weight: 700;
 	line-height: 1.1;

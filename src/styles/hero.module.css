@@ -16,13 +16,17 @@
 }
 
 .info p {
-  
+  font-family: Helvetica, sans-serif;
+	font-size: var(--body-text);
+	line-height: 1.5;
+	color: #444;
+	font-weight: 300;
 }
 
 .image {
   justify-self: end;
-  height: clamp(15rem,35svw,35rem);
-  width: clamp(15rem,35svw,35rem);
+  height: clamp(21rem,35svw,35rem);
+  width: clamp(21rem,35svw,35rem);
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   overflow: hidden;
 }
