@@ -35,6 +35,7 @@
 
 .testimonial figure figcaption {
     font-size: var(--body-text);
+    color: var(--contrast-color);
 }
 
 .testimonial figure img {

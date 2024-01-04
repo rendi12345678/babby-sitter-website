@@ -8,7 +8,6 @@
     position: relative;
     align-items: center;
     max-width: var(--max-width);
-    box-shadow: 1px 1px 5px solid rgba(0,0,0,0.25);
 }
 
 .navbar h4 {
@@ -48,7 +47,7 @@
 .hamburger-menu span {
     width: 100%;
     height: .35rem;
-    background: #333;
+    background: var(--headings-color);
 }
 
 @media (width < 992px) {

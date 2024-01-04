@@ -33,7 +33,7 @@
    font-family: Helvetica, sans-serif;
 	font-size: var(--body-text);
 	line-height: 1.5;
-	color: #444;
+	color: var(--accent-color);
 	font-weight: 300;
 }
 
@@ -66,11 +66,15 @@
 
 .contact form textarea {
     width: 100%;
-    height: 15rem;
+    height: clamp(15rem, 20vw, 20vw);
     box-sizing: border-box;
-    padding: .5rem;
+    padding: 1rem;
     margin: 0;
     margin-top: 1rem;
+}
+
+.contact form textarea::placeholder {
+    padding: 1rem;
 }
 
 @media (width < 576px) {
