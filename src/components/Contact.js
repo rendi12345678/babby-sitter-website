@@ -12,8 +12,7 @@ export const Contact = () => {
       .required("Phone number is required!"),
     location: Yup.string().required("Location is required!"),
     date: Yup.date().required("Date is required!"),
-    salary: Yup.number()
-      .min(0, "Salary cannot be negative")
+    salary: Yup.string()
       .required("Salary is required!"),
     message: Yup.string().required("Message is required!"),
     child: Yup.number()
@@ -29,7 +28,7 @@ export const Contact = () => {
       noHp: "",
       location: "",
       date: "",
-      salary: "0",
+      salary: "",
       message: "",
       child: 1,
       workingHours: "",
@@ -56,6 +55,12 @@ export const Contact = () => {
     console.log("Submit Form!");
     formik.submitForm();
   };
+  
+  const handleSalaryChange = (event) => {
+    const inputValue = event.target.value;
+    const formattedSalary = `$${inputValue}`;
+    formik.setFieldValue('salary', formattedSalary);
+  };
 
   useEffect(() => {
     console.log("Errors :", formik.errors);
@@ -80,6 +85,11 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
+            <br/>
+            {formik.errors.name !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.name}</p> }
           </label>
           <label htmlFor="email">
             Email <br />
@@ -92,6 +102,11 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
+            <br/>
+            {formik.errors.email !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.email}</p> }
           </label>
           <label htmlFor="noHp">
             Phone Number <br />
@@ -105,6 +120,11 @@ export const Contact = () => {
               name="noHp"
               onChange={formik.handleChange}
             />
+            <br/>
+            {formik.errors.noHp !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.noHp}</p> }
           </label>
           <label htmlFor="location">
             Place to work <br />
@@ -117,6 +137,11 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
+            <br/>
+            {formik.errors.location !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.location}</p> }
           </label>
           <label htmlFor="date">
             Date to work <br />
@@ -128,6 +153,11 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
+            <br/>
+            {formik.errors.date !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.date}</p> }
           </label>
           <label htmlFor="workingHours">
             Working Hours <br />
@@ -140,6 +170,11 @@ export const Contact = () => {
               placeholder="e.g : 9:00 AM - 5:00 PM"
               required
             />
+            <br/>
+            {formik.errors.workingHours !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.workingHours}</p> }
           </label>
           <label htmlFor="child">
             Number of child <br />
@@ -154,6 +189,11 @@ export const Contact = () => {
               max="100"
               required
             />
+            <br/>
+            {formik.errors.child !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.child}</p> }
           </label>
           <label htmlFor="salary">
             Dollar Salary <br />
@@ -162,12 +202,17 @@ export const Contact = () => {
               value={salary}
               id="salary"
               name="salary"
-              onChange={formik.handleChange}
-              placeholder="$0"
+              onChange={handleSalaryChange}
+              placeholder="Fill with dollar salary!"
               required
             />
+            <br/>
+            {formik.errors.salary !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.salary}</p> }
           </label>
-          <label htmlFor="salary">
+          <label htmlFor="message">
             Message <br />
             <textarea
               type="text"
@@ -178,6 +223,11 @@ export const Contact = () => {
               placeholder="Write your message!"
               required
             ></textarea>
+            <br/>
+            {formik.errors.message !== "" && <p style={{
+              color: "red",
+              marginTop: "1rem"
+            }}>{formik.errors.message}</p> }
           </label>
         </div>
         <div>
