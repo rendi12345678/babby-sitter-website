@@ -16,13 +16,16 @@
 }
 
 .info p {
-  
+  font-family: Helvetica, sans-serif;
+	font-size: var(--body-text);
+	line-height: 1.5;
+	font-weight: 300;
 }
 
 .image {
   justify-self: end;
-  height: clamp(15rem,35svw,35rem);
-  width: clamp(15rem,35svw,35rem);
+  height: clamp(25rem,35svw,33rem);
+  width: clamp(25em,35svw,33rem);
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   overflow: hidden;
 }
@@ -33,7 +36,7 @@
   height: 100%;
 }
 
-@media (width < 992px) {
+@media (width < 768px) {
   .hero {
     grid-template-columns: 1fr;
   }
@@ -47,5 +50,12 @@
   .info {
     align-self: start;
     order: 2;
+  }
+}
+
+@media (width < 400px) {
+  .image {
+    height: clamp(20rem,35svw,33rem);
+    width: clamp(20rem,35svw,33rem);
   }
 }
