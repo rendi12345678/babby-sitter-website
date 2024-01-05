@@ -1,17 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import contactStyles from "../styles/contact.module.css";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    noHp: "",
-    location: "",
-    date: "",
-    salary: "0",
-    message: "",
-    child: 1,
-    workingHours: "",
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required!"),
+    email: Yup.string().email("Invalid email").required("Email is required!"),
+    noHp: Yup.string()
+      .matches(/^\+\d{1,}-\d{3}-\d{3}-\d{4}$/, "Invalid phone number format")
+      .required("Phone number is required!"),
+    location: Yup.string().required("Location is required!"),
+    date: Yup.date().required("Date is required!"),
+    salary: Yup.number()
+      .min(0, "Salary cannot be negative")
+      .required("Salary is required!"),
+    message: Yup.string().required("Message is required!"),
+    child: Yup.number()
+      .min(1, "Number of children must be at least 1")
+      .required("Number of children is required!"),
+    workingHours: Yup.string().required("Working hours are required!"),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      noHp: "",
+      location: "",
+      date: "",
+      salary: "0",
+      message: "",
+      child: 1,
+      workingHours: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      console.log("Form Data:", values);
+    },
   });
 
   const {
@@ -24,16 +50,16 @@ export const Contact = () => {
     child,
     location,
     workingHours,
-  } = formData;
+  } = formik.values;
 
-  const handleSubmit = () => {};
-
-  const handleInputChange = (e) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [e.target.name]: e.target.value,
-    }));
+  const submitForm = () => {
+    console.log("Submit Form!");
+    formik.submitForm();
   };
+
+  useEffect(() => {
+    console.log("Errors :", formik.errors);
+  }, [formik.values]);
 
   return (
     <section className={contactStyles.contact}>
@@ -41,7 +67,7 @@ export const Contact = () => {
         <h2>Contact Me</h2>
         <p>Lets call me now</p>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <div>
           <label htmlFor="name">
             Name <br />
@@ -51,7 +77,7 @@ export const Contact = () => {
               id="name"
               name="name"
               placeholder="e.g : Larasati Ningsih"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               required
             />
           </label>
@@ -63,7 +89,7 @@ export const Contact = () => {
               value={email}
               id="email"
               name="email"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               required
             />
           </label>
@@ -77,7 +103,7 @@ export const Contact = () => {
               value={noHp}
               id="noHp"
               name="noHp"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
             />
           </label>
           <label htmlFor="location">
@@ -88,7 +114,7 @@ export const Contact = () => {
               value={location}
               id="location"
               name="location"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               required
             />
           </label>
@@ -99,7 +125,7 @@ export const Contact = () => {
               value={date}
               id="date"
               name="date"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               required
             />
           </label>
@@ -110,7 +136,7 @@ export const Contact = () => {
               value={workingHours}
               id="workingHours"
               name="workingHours"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               placeholder="e.g : 9:00 AM - 5:00 PM"
               required
             />
@@ -122,7 +148,7 @@ export const Contact = () => {
               value={child}
               id="child"
               name="child"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               placeholder="e.g : 3"
               min="1"
               max="100"
@@ -136,7 +162,7 @@ export const Contact = () => {
               value={salary}
               id="salary"
               name="salary"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               placeholder="$0"
               required
             />
@@ -148,14 +174,16 @@ export const Contact = () => {
               value={message}
               id="message"
               name="message"
-              onChange={handleInputChange}
+              onChange={formik.handleChange}
               placeholder="Write your message!"
               required
             ></textarea>
           </label>
         </div>
         <div>
-        <button>Submit Form</button>
+          <button type="button" onClick={submitForm}>
+            Submit Form
+          </button>
         </div>
       </form>
     </section>

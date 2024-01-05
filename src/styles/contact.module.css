@@ -1,84 +1,84 @@
 .contact {
-    display: grid;
-    justify-content: center;
-    max-width: 70rem;
-    width: 100%;
-    margin: auto;
-    grid-template-columns: 1fr;
-    box-sizing: border-box;
-    align-content: start;
-    margin-top: var(--white-space);
-    max-width: var(--max-width);
-    height: 100%;
-    padding: var(--white-space);
+  display: grid;
+  justify-content: center;
+  max-width: 70rem;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: 1fr;
+  box-sizing: border-box;
+  align-content: start;
+  margin-top: var(--white-space);
+  max-width: var(--max-width);
+  height: 100%;
+  padding: var(--white-space);
 }
 
 .contact form {
-    display: grid;
-    width: 100%;
+  display: grid;
+  width: 100%;
 }
 
 .title {
-    text-align: center;
-	display: grid;
-	align-items: start;
-	justify-content: center;
-	margin-bottom: var(--white-space);
-	width: 100%;
-    gap: 0;
+  text-align: center;
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  margin-bottom: var(--white-space);
+  width: 100%;
+  color: var(--headings-color);
+  gap: 0;
 }
 
 .title p {
-    color: var(--accent-color);
-   font-family: Helvetica, sans-serif;
-	font-size: var(--body-text);
-	line-height: 1.5;
-	color: var(--accent-color);
-	font-weight: 300;
+  font-family: Helvetica, sans-serif;
+  font-size: var(--body-text);
+  line-height: 1.5;
+  color: var(--accent-color);
+  font-weight: 300;
 }
 
 .contact form div:first-child {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    gap: 2rem;
-    box-sizing: border-box;
-    grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 2rem;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr;
 }
 
 .contact form div:last-child {
-    width: 100%;
-    display: grid;
-    justify-content: center;
+  width: 100%;
+  display: grid;
+  justify-content: center;
 }
 
 .contact form input {
-    width: 100%;
-    margin-top: 1rem;
-    box-sizing: border-box;
+  width: 100%;
+  margin-top: 1rem;
+  box-sizing: border-box;
 }
 
 .contact form label:last-child {
-    grid-column: 1 / -1;
-    height: 100%;
-    width: 100%;
+  grid-column: 1 / -1;
+  height: 100%;
+  width: 100%;
 }
 
 .contact form textarea {
-    width: 100%;
-    height: clamp(15rem, 20vw, 20vw);
-    box-sizing: border-box;
-    padding: 1rem;
-    margin: 0;
-    margin-top: 1rem;
+  width: 100%;
+  height: clamp(15rem, 20vw, 20vw);
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 0;
+  margin-top: 1rem;
 }
 
 .contact form textarea::placeholder {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 @media (width < 576px) {
-    .contact form div:first-child {
-        grid-template-columns: 1fr;
-    }
+  .contact form div:first-child {
+    grid-template-columns: 1fr;
+  }
 }
