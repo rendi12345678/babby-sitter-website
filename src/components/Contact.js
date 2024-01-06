@@ -4,20 +4,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 export const Contact = () => {
+  const [isReady, setIsReady] = useState(false);
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required!"),
     email: Yup.string().email("Invalid email").required("Email is required!"),
-    noHp: Yup.string()
-      .matches(/^\+\d{1,}-\d{3}-\d{3}-\d{4}$/, "Invalid phone number format")
-      .required("Phone number is required!"),
+    noHp: Yup.string().required("Phone number is required!"),
     location: Yup.string().required("Location is required!"),
     date: Yup.date().required("Date is required!"),
-    salary: Yup.string()
-      .required("Salary is required!"),
+    salary: Yup.string().required("Salary is required!"),
     message: Yup.string().required("Message is required!"),
-    child: Yup.number()
-      .min(1, "Number of children must be at least 1")
-      .required("Number of children is required!"),
+    child: Yup.string().required("Number of children is required!"),
     workingHours: Yup.string().required("Working hours are required!"),
   });
 
@@ -30,11 +26,12 @@ export const Contact = () => {
       date: "",
       salary: "",
       message: "",
-      child: 1,
+      child: "",
       workingHours: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      sendDataToWhatsApp(values);
       console.log("Form Data:", values);
     },
   });
@@ -55,14 +52,59 @@ export const Contact = () => {
     console.log("Submit Form!");
     formik.submitForm();
   };
-  
-  const handleSalaryChange = (event) => {
-    const inputValue = event.target.value;
-    const formattedSalary = `$${inputValue}`;
-    formik.setFieldValue('salary', formattedSalary);
+
+  const checkFormData = () => {
+    if (
+      Object.values(formik.values).every((value) => value !== "") &&
+      Object.values(formik.errors).every((error) => error === "")
+    )
+      return true;
+    return false;
+  };
+
+  const submitButtonStyle = {
+    color: "#fff",
+    backgroundColor: isReady ? "var(--accent-color)" : "grey",
+    cursor: checkFormData() ? "pointer" : "not-allowed",
+  };
+
+  const formatMessage = ({
+    name,
+    email,
+    noHp,
+    date,
+    salary,
+    message,
+    child,
+    location,
+    workingHours,
+  }) => {
+    return `
+    Booking data : 
+    
+    Name : ${name},
+    noHp : ${noHp},
+    Email : ${email}`;
+  };
+
+  const sendDataToWhatsApp = (values) => {
+    const formatedMessage = formatMessage(values);
+
+    window.open(
+      `http://wa.me/6285733300369/?text=${encodeURIComponent(formatedMessage)}`
+    );
   };
 
   useEffect(() => {
+    if (checkFormData()) {
+      setIsReady(true);
+    } else {
+      setIsReady(false);
+    }
+
+    console.log(checkFormData);
+
+    console.log("Ready :", isReady);
     console.log("Errors :", formik.errors);
   }, [formik.values]);
 
@@ -85,11 +127,17 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
-            <br/>
-            {formik.errors.name !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.name}</p> }
+            <br />
+            {formik.errors.name !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.name}
+              </p>
+            )}
           </label>
           <label htmlFor="email">
             Email <br />
@@ -102,11 +150,17 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
-            <br/>
-            {formik.errors.email !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.email}</p> }
+            <br />
+            {formik.errors.email !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.email}
+              </p>
+            )}
           </label>
           <label htmlFor="noHp">
             Phone Number <br />
@@ -120,11 +174,17 @@ export const Contact = () => {
               name="noHp"
               onChange={formik.handleChange}
             />
-            <br/>
-            {formik.errors.noHp !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.noHp}</p> }
+            <br />
+            {formik.errors.noHp !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.noHp}
+              </p>
+            )}
           </label>
           <label htmlFor="location">
             Place to work <br />
@@ -137,11 +197,17 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
-            <br/>
-            {formik.errors.location !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.location}</p> }
+            <br />
+            {formik.errors.location !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.location}
+              </p>
+            )}
           </label>
           <label htmlFor="date">
             Date to work <br />
@@ -153,11 +219,17 @@ export const Contact = () => {
               onChange={formik.handleChange}
               required
             />
-            <br/>
-            {formik.errors.date !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.date}</p> }
+            <br />
+            {formik.errors.date !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.date}
+              </p>
+            )}
           </label>
           <label htmlFor="workingHours">
             Working Hours <br />
@@ -170,16 +242,22 @@ export const Contact = () => {
               placeholder="e.g : 9:00 AM - 5:00 PM"
               required
             />
-            <br/>
-            {formik.errors.workingHours !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.workingHours}</p> }
+            <br />
+            {formik.errors.workingHours !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.workingHours}
+              </p>
+            )}
           </label>
           <label htmlFor="child">
             Number of child <br />
             <input
-              type="number"
+              type="text"
               value={child}
               id="child"
               name="child"
@@ -189,11 +267,17 @@ export const Contact = () => {
               max="100"
               required
             />
-            <br/>
-            {formik.errors.child !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.child}</p> }
+            <br />
+            {formik.errors.child !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.child}
+              </p>
+            )}
           </label>
           <label htmlFor="salary">
             Dollar Salary <br />
@@ -202,15 +286,21 @@ export const Contact = () => {
               value={salary}
               id="salary"
               name="salary"
-              onChange={handleSalaryChange}
+              onChange={formik.handleChange}
               placeholder="Fill with dollar salary!"
               required
             />
-            <br/>
-            {formik.errors.salary !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.salary}</p> }
+            <br />
+            {formik.errors.salary !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.salary}
+              </p>
+            )}
           </label>
           <label htmlFor="message">
             Message <br />
@@ -223,15 +313,26 @@ export const Contact = () => {
               placeholder="Write your message!"
               required
             ></textarea>
-            <br/>
-            {formik.errors.message !== "" && <p style={{
-              color: "red",
-              marginTop: "1rem"
-            }}>{formik.errors.message}</p> }
+            <br />
+            {formik.errors.message !== "" && (
+              <p
+                style={{
+                  color: "red",
+                  marginTop: "1rem",
+                }}
+              >
+                {formik.errors.message}
+              </p>
+            )}
           </label>
         </div>
         <div>
-          <button type="button" onClick={submitForm}>
+          <button
+            type="button"
+            disabled={!isReady}
+            style={submitButtonStyle}
+            onClick={submitForm}
+          >
             Submit Form
           </button>
         </div>

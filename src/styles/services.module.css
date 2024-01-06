@@ -13,11 +13,19 @@
     display: grid;
     width: 100%;
     gap: var(--white-space);
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+}
+
+.service-list div {
+    text-align: left;
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
 }
 
 .service-list > div h3 {
     color: var(--body-color);
+    font-size: var(--h3);
     opacity: .3;
 }
 
