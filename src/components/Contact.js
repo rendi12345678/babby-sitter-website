@@ -1,49 +1,80 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import contactStyles from "../styles/contact.module.css";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-const mapStyles = {
-  width: "100%",
-  height: "400px",
-};
-
-const defaultCenter = {
-  lat: 41.3851,
-  lng: 2.1734,
-};
+import BingMapsReact from "bingmaps-react";
 
 export const Contact = () => {
-  const [currentPosition, setCurrentPosition] = useState({});
-  const apiKey = "AIzaSyCW6dOsi08OPHni-1JOC1LimrtfRdGnhgI";
+  const apiKey =
+    "AqoMZX6lawABgf7PAvs5Nf9rS3kS9mYgaHSLnVKw1YbW1ZHzbfMhLxTW6FK20fj_";
 
-  const success = (position) => {
-    const currentPosition = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    };
-    setCurrentPosition(currentPosition);
+  const initialLocation = { latitude: -8.645353, longitude: 115.191429 };
+
+  const pushPin = {
+    center: {
+      latitude: initialLocation.latitude,
+      longitude: initialLocation.longitude,
+    },
+    options: {
+      title: "Ningsih Nanny Home",
+    },
   };
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success);
-  });
+  const pushPins = [pushPin];
 
   return (
     <>
       <section className={contactStyles.contact}>
-        <div className={contactStyles.title}>
+        <div className={contactStyles["contact-info"]}>
           <h2>Contact Me</h2>
           <p>Lets call me now</p>
+          <div className={contactStyles.contactInfoList}>
+            <figure>
+              <div>
+                <img src="/img/location-dark.png" alt="location" />
+              </div>
+              <figcaption>
+                Gang Jepun No. 10, Denpasar Barat, Denpasar, Bali 80118,
+                Indonesia
+              </figcaption>
+            </figure>
+            <figure>
+              <div>
+                <img src="/img/phone-dark.png" alt="telephone" />
+              </div>
+              <figcaption>+62 812-3832-0491</figcaption>
+            </figure>
+            <figure>
+              <div>
+                <img src="/img/mail-dark.png" alt="email" />
+              </div>
+              <figcaption>larasatiningsih58@gmail.com</figcaption>
+            </figure>
+            <figure>
+              <div>
+                <img src="/img/facebook-dark.png" alt="facebook" />
+              </div>
+              <figcaption>Ningsih Nanny</figcaption>
+            </figure>
+          </div>
         </div>
-        <LoadScript googleMapsApiKey={apiKey}>
-          <GoogleMap
-            mapContainerStyle={mapStyles}
-            zoom={13}
-            center={currentPosition}
-          >
-            {currentPosition.lat && <Marker position={currentPosition} />}
-          </GoogleMap>
-        </LoadScript>
+        <div style={{borderRadius: "var(--border-radius)", overflow: "hidden"}}>
+          <BingMapsReact
+            bingMapsKey={apiKey}
+            height="40rem"
+            width="100%"
+            mapOptions={{
+              navigationBarMode: "square",
+            }}
+            pushPins={pushPins}
+            viewOptions={{
+              center: {
+                latitude: initialLocation.latitude,
+                longitude: initialLocation.longitude,
+              },
+              mapTypeId: "aerial",
+              zoom: 10,
+            }}
+          ></BingMapsReact>
+        </div>
       </section>
     </>
   );

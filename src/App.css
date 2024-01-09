@@ -275,7 +275,8 @@ label,
 input,
 input::placeholder,
 textarea::placeholder,
-textarea {
+textarea, 
+figcaption {
   font-family: "Source Sans", sans-serif;
   font-size: var(--body-text);
   line-height: 1.5;
@@ -358,6 +359,7 @@ button {
 
 img {
   border-radius: var(--border-radius);
+  box-sizing: border-box;
 }
 
 label {

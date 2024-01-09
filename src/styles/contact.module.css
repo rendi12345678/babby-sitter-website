@@ -1,33 +1,62 @@
 .contact {
   display: grid;
   justify-content: center;
-  max-width: 70rem;
   width: 100%;
   margin: auto;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
-  align-content: start;
-  margin-top: var(--white-space);
+  align-items: center;
+  gap: var(--white-space);
+  margin-top: calc(var(--white-space) * 2);
   max-width: var(--max-width);
-  height: 100%;
-  padding: var(--white-space);
 }
 
-.title {
-  text-align: center;
+.contact-info {
+  text-align: left;
   display: grid;
-  align-items: start;
-  justify-content: center;
-  margin-bottom: var(--white-space);
   width: 100%;
   color: var(--contrast-color);
   gap: 0;
 }
 
-.title p {
+.contact-info p {
+  margin-bottom: var(--white-space);
   font-family: "Source Sans", sans-serif;
   font-size: var(--body-text);
   line-height: 1.5;
   color: var(--accent-color);
   font-weight: 400;
+}
+
+.contact figure {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.contact figure div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--body-color);
+  width: 4.5rem;
+  height: 4.5rem;
+  box-sizing: border-box;
+}
+
+.contact figure img {
+  width: 60%;
+  box-sizing: border-box;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.contactInfoList {
+  display: grid;
+  gap: 2rem;
 }
