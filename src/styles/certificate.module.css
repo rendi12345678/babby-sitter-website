@@ -1,0 +1,16 @@
+.certificate {
+    max-width: var(--max-width);
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+    margin-top: calc(var(--white-space) * 2);
+}
+
+.certificate img {
+    width: 100%;
+}
+
+

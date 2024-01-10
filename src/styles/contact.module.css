@@ -20,7 +20,7 @@
 }
 
 .contact-info p {
-  margin-bottom: var(--white-space);
+  margin-bottom: var(--title-space);
   font-family: "Source Sans", sans-serif;
   font-size: var(--body-text);
   line-height: 1.5;
@@ -40,23 +40,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--body-color);
+  background: var(--secondary-color);
   width: 4.5rem;
   height: 4.5rem;
+  border-radius: 50%;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
 .contact figure img {
-  width: 60%;
-  box-sizing: border-box;
-  height: 60%;
-  overflow: hidden;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
 }
 
 .contactInfoList {
   display: grid;
   gap: 2rem;
+}
+
+@media (width < 768px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info h2, .contact-info p {
+    text-align: center;
+  }
 }

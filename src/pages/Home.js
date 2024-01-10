@@ -3,10 +3,11 @@ import containerStyles from "../styles/container.module.css";
 import { Navbar } from "../components/Navbar.js";
 import { Hero } from "../components/Hero.js";
 import { About } from "../components/About.js";
-import { Services } from "../components/Services.js";
+import { Certificate } from "../components/Certificate.js";
 import { Testimonials } from "../components/Testimonials.js";
 import { Gallery } from "../components/Gallery.js";
 import { Contact } from "../components/Contact.js";
+import { Footer } from "../components/Footer.js";
 
 export const Home = () => {
   return (
@@ -19,7 +20,7 @@ export const Home = () => {
       </div>
       <div className={containerStyles.container}>
         <About />
-        <Services />
+        <Certificate />
       </div>
       <div className={containerStyles.container2}>
         <Testimonials />
@@ -27,6 +28,9 @@ export const Home = () => {
       <div className={containerStyles.container}>
         <Gallery />
         <Contact />
+      </div>
+      <div className={containerStyles.footerContainer}>
+        <Footer />
       </div>
     </>
   );

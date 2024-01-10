@@ -13,6 +13,15 @@
     grid-template-columns: 1fr;
     background: var(--secondary-color);
     padding: var(--white-space);
+
+}
+.footerContainer {
+    display: grid;
+    justify-content: center;
+    width: 100svw;
+    grid-template-columns: 1fr;
+    background: var(--secondary-color);
+    padding: 2rem;
 }
 
 .navbar-container {

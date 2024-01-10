@@ -6,7 +6,7 @@ export const Hero = () => {
     <>
     <section className={heroStyles.hero}>
       <div className={heroStyles.info}>
-        <h1>Expert Nanny in Bali</h1>
+        <h1>Experienced Nanny</h1>
         <p>With over 10 years of experience, I provide exceptional childcare as your trusted nanny in Bali.</p>
         <button>Call Me Now</button>
       </div>
