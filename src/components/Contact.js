@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import contactStyles from "../styles/contact.module.css";
 import BingMapsReact from "bingmaps-react";
+import { AppContext } from "../App";
 
 export const Contact = () => {
   const apiKey =
     "AqoMZX6lawABgf7PAvs5Nf9rS3kS9mYgaHSLnVKw1YbW1ZHzbfMhLxTW6FK20fj_";
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const {contactRef} = useContext(AppContext);
 
   const initialLocation = { latitude: -8.645353, longitude: 115.191429 };
 
@@ -43,7 +45,7 @@ export const Contact = () => {
 
   return (
     <>
-      <section className={contactStyles.contact}>
+      <section className={contactStyles.contact} id="contact" ref={contactRef}>
         <div className={contactStyles["contact-info"]}>
           <h2>Contact Me</h2>
           <p>Let's call me now</p>

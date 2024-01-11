@@ -3,7 +3,7 @@ import testimonialsStyles from "../styles/testimonials.module.css";
 
 export const Testimonials = () => {
   return (
-    <section className={testimonialsStyles.testimonials}>
+    <section className={testimonialsStyles.testimonials} id="testimonials">
       <div className="section-title">
         <h2>Testimonials</h2>
         <p>What people say</p>

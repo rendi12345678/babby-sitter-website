@@ -1,12 +1,31 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home.js';
+import "./App.css";
+import React, { createContext, useRef, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home.js";
+
+export const AppContext = createContext();
 
 function App() {
+  const contactRef = useRef();
+  const [isDisplay, setIsDisplay] = useState(false);
+
+  const navToggle = () => {
+    setIsDisplay(!isDisplay);
+  };
+
+  const scrollToElement = () => {
+    if (contactRef.current) {
+      navToggle()
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Routes>
-       <Route path='/' element={<Home/>}/>
-    </Routes>
+    <AppContext.Provider value={{contactRef, scrollToElement, navToggle, isDisplay}}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </AppContext.Provider>
   );
 }
 

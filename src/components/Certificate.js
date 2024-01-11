@@ -3,7 +3,7 @@ import certificateStyles from "../styles/certificate.module.css";
 
 export const Certificate = () => {
   return (
-    <section className={certificateStyles.certificate}>
+    <section className={certificateStyles.certificate} id="certificate">
       <div className="section-title">
         <h2>My Certificate</h2>
         <p>What is it</p>

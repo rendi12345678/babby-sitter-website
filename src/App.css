@@ -343,6 +343,11 @@ a {
   font-size: calc(var(--body-text));
   text-decoration: none;
   color: var(--body-color);
+  transition: 300ms;
+}
+
+a:hover {
+  color: var(--accent-color);
 }
 
 button {
@@ -355,6 +360,15 @@ button {
   margin-top: var(--title-space);
   font-weight: bold;
   width: fit-content;
+  transition: 300ms;
+}
+
+button:hover {
+  filter: brightness(85%);
+}
+
+button:active {
+  transform: scale(93%);
 }
 
 img {

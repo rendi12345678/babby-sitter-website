@@ -3,7 +3,7 @@ import aboutStyles from "../styles/about.module.css";
 
 export const About = () => {
   return (
-    <section className={aboutStyles.about}>
+    <section className={aboutStyles.about} id="about">
       <figure className={aboutStyles.image}>
         <img src="/img/hero4.jpg" alt="About" />
         <img src="/img/hero3.jpg" alt="About" />
