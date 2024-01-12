@@ -5,7 +5,7 @@ import { AppContext } from "../App";
 
 export const Contact = () => {
   const apiKey =
-    "AqoMZX6lawABgf7PAvs5Nf9rS3kS9mYgaHSLnVKw1YbW1ZHzbfMhLxTW6FK20fj_";
+    "AgPOqaFz423SjSacwk4Cq26knDVhCcGyVTJ69-U6GTbaNyX635C6WFw11bysRJ6U";
   const [isDarkMode, setIsDarkMode] = useState(false);
   const {contactRef} = useContext(AppContext);
 
@@ -97,8 +97,7 @@ export const Contact = () => {
               },
               mapTypeId: "aerial",
               zoom: 10,
-            }}
-          ></BingMapsReact>
+            }}/>
         </div>
       </section>
     </>

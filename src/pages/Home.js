@@ -21,7 +21,7 @@ export const Home = () => {
       </div>
       <div className={containerStyles.container}>
         <About />
-        <Services/>
+        <Services />
         <Certificate />
       </div>
       <div className={containerStyles.container2}>

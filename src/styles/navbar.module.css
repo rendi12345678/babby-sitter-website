@@ -21,17 +21,9 @@
 
 .navbar ul {
     display: flex;
-    width: 55%;
+    width: 65%;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar ul button {
-    display: none;
-}
-
-.navbar button {
-    margin-top: 0;
 }
 
 .hamburger-menu {
@@ -75,14 +67,6 @@
    .navList.show {
     transform: translateY(0);
     opacity: 1;
-   }
-
-   .navbar ul button {
-    display: block;
-   }
-
-   .navbar > button {
-    display: none;
    }
 
    .hamburger-menu {

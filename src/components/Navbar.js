@@ -8,22 +8,22 @@ const hamburgerStyles = {
   firstSpan: {
     transformOrigin: "left top",
     transform: "rotate(45deg)",
-    background: "red"
+    background: "red",
   },
   midSpan: {
-    display: "none"
+    display: "none",
   },
   lastSpan: {
     transformOrigin: "left bottom",
     background: "red",
     transform: "rotate(-45deg) translate(-.1rem, .1rem)",
   },
-}
+};
 
 export const Navbar = () => {
-  
   const navigate = useNavigate();
-  const { contactRef, scrollToElement, navToggle, isDisplay } = useContext(AppContext);
+  const { contactRef, scrollToElement, navToggle, isDisplay } =
+    useContext(AppContext);
 
   return (
     <nav className={navStyles.navbar}>
@@ -42,6 +42,11 @@ export const Navbar = () => {
         <li>
           <HashLink to="/#certificate" smooth onClick={navToggle}>
             Certificate
+          </HashLink>
+        </li>
+        <li>
+          <HashLink to="/#services" smooth onClick={navToggle}>
+            Services
           </HashLink>
         </li>
         <li>
