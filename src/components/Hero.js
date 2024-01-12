@@ -1,9 +1,10 @@
 import React, {useContext} from 'react'
 import heroStyles from "../styles/hero.module.css"
 import { AppContext } from '../App';
+import { FullSizeImage } from './FullSizeImage';
 
 export const Hero = () => {
-  const { scrollToElement } = useContext(AppContext);
+  const { scrollToElement} = useContext(AppContext);
 
   return (
     <>
@@ -14,7 +15,7 @@ export const Hero = () => {
         <button onClick={scrollToElement}>Call Me Now</button>
       </div>
       <figure className={heroStyles.image}>
-        <img src="/img/hero4.jpg" alt="Nanny" />
+        <img src="/img/hero4.jpg" alt="Nanny" onClick={() => <FullSizeImage imageUrl="/img/hero4.jpg"/>}/>
       </figure>
     </section>
       </>

@@ -1,7 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { lazy, useContext, useEffect, useState, Suspense } from "react";
 import contactStyles from "../styles/contact.module.css";
-import BingMapsReact from "bingmaps-react";
 import { AppContext } from "../App.js";
+
+const BingMapsReact = lazy(() => import("bingmaps-react"))
 
 export const Contact = () => {
   const apiKey =
@@ -100,6 +101,7 @@ export const Contact = () => {
         <div
           style={{ borderRadius: "var(--border-radius)", overflow: "hidden" }}
         >
+          <Suspense fallback={<p>Loading...</p>}>
           <BingMapsReact
             bingMapsKey={apiKey}
             height="clamp(35rem, 41svw, 41rem)"
@@ -117,6 +119,7 @@ export const Contact = () => {
               zoom: 10,
             }}
           />
+          </Suspense>
         </div>
       </section>
     </>
