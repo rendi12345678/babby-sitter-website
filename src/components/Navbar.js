@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import navStyles from "../styles/navbar.module.css";
-import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 
 const hamburgerStyles = {
@@ -21,9 +20,7 @@ const hamburgerStyles = {
 };
 
 export const Navbar = () => {
-  const navigate = useNavigate();
-  const { contactRef, scrollToElement, navToggle, isDisplay } =
-    useContext(AppContext);
+  const { contactRef, scrollToElement, navToggle, isDisplay } = useContext(AppContext);
 
   return (
     <nav className={navStyles.navbar}>

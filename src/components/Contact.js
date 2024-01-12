@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import contactStyles from "../styles/contact.module.css";
 import BingMapsReact from "bingmaps-react";
-import { AppContext } from "../App";
+import { AppContext } from "../App.js";
 
 export const Contact = () => {
   const apiKey =
-    "AgPOqaFz423SjSacwk4Cq26knDVhCcGyVTJ69-U6GTbaNyX635C6WFw11bysRJ6U";
+    "AqoMZX6lawABgf7PAvs5Nf9rS3kS9mYgaHSLnVKw1YbW1ZHzbfMhLxTW6FK20fj_";
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const {contactRef} = useContext(AppContext);
+  const { contactRef } = useContext(AppContext);
 
   const initialLocation = { latitude: -8.645353, longitude: 115.191429 };
 
@@ -52,7 +52,12 @@ export const Contact = () => {
           <div className={contactStyles.contactInfoList}>
             <figure>
               <div>
-                <img src={isDarkMode ? "/img/location.svg" : "/img/location-dark.svg"} alt="location" />
+                <img
+                  src={
+                    isDarkMode ? "/img/location.svg" : "/img/location-dark.svg"
+                  }
+                  alt="location"
+                />
               </div>
               <figcaption>
                 jl Gunung Andakasa, Gang Jepun No. 10, Denpasar Barat, Denpasar,
@@ -61,19 +66,34 @@ export const Contact = () => {
             </figure>
             <figure>
               <div>
-                <img src={isDarkMode ? "/img/telephone.svg" : "/img/telephone-dark.svg"} alt="telephone" />
+                <img
+                  src={
+                    isDarkMode
+                      ? "/img/telephone.svg"
+                      : "/img/telephone-dark.svg"
+                  }
+                  alt="telephone"
+                />
               </div>
               <figcaption>+62 812-3832-0491</figcaption>
             </figure>
             <figure>
               <div>
-                <img src={isDarkMode ? "/img/mail.svg" : "/img/mail-dark.svg"}alt="email" />
+                <img
+                  src={isDarkMode ? "/img/mail.svg" : "/img/mail-dark.svg"}
+                  alt="email"
+                />
               </div>
               <figcaption>larasatiningsih58@gmail.com</figcaption>
             </figure>
             <figure>
               <div>
-                <img src={isDarkMode ? "/img/facebook.svg" : "/img/facebook-dark.svg"} alt="facebook" />
+                <img
+                  src={
+                    isDarkMode ? "/img/facebook.svg" : "/img/facebook-dark.svg"
+                  }
+                  alt="facebook"
+                />
               </div>
               <figcaption>Ningsih Nanny</figcaption>
             </figure>
@@ -97,7 +117,8 @@ export const Contact = () => {
               },
               mapTypeId: "aerial",
               zoom: 10,
-            }}/>
+            }}
+          />
         </div>
       </section>
     </>
