@@ -34,10 +34,8 @@ export const Contact = () => {
 
     darkModeMediaQuery.addEventListener("change", handleThemeChange);
 
-    // Set initial theme
     setIsDarkMode(darkModeMediaQuery.matches);
 
-    // Clean up event listener on component unmount
     return () => {
       darkModeMediaQuery.removeEventListener("change", handleThemeChange);
     };
