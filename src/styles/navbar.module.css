@@ -49,7 +49,7 @@
     height: .35rem;
     background: var(--headings-color);
     border-radius: var(--border-radius);
-    transition: 300ms;
+    transition: 500ms;
 }
 
 @media (width < 992px) {

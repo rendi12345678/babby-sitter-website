@@ -9,8 +9,8 @@ export const Hero = () => {
     <>
     <section className={heroStyles.hero} id='hero'>
       <div className={heroStyles.info}>
-        <h1>Experienced Nanny</h1>
-        <p>With over 10 years of experience, I provide exceptional childcare as your trusted nanny in Bali.</p>
+        <h1>Ningsih Nanny</h1>
+        <p>Experienced, flexible, fun, reliable & frist Aid trained.</p>
         <button onClick={scrollToElement}>Call Me Now</button>
       </div>
       <figure className={heroStyles.image}>

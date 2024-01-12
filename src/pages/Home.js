@@ -8,6 +8,7 @@ import { Testimonials } from "../components/Testimonials.js";
 import { Gallery } from "../components/Gallery.js";
 import { Contact } from "../components/Contact.js";
 import { Footer } from "../components/Footer.js";
+import { Services } from "../components/Services.js";
 
 export const Home = () => {
   return (
@@ -20,6 +21,7 @@ export const Home = () => {
       </div>
       <div className={containerStyles.container}>
         <About />
+        <Services/>
         <Certificate />
       </div>
       <div className={containerStyles.container2}>

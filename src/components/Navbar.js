@@ -59,9 +59,7 @@ export const Navbar = () => {
             Contact
           </HashLink>
         </li>
-        <button onClick={scrollToElement}>Call Me Now</button>
       </ul>
-      <button onClick={scrollToElement}>Call Me Now</button>
       <div className={navStyles["hamburger-menu"]} onClick={navToggle}>
         <span style={isDisplay ? hamburgerStyles.firstSpan : {}}></span>
         <span style={isDisplay ? hamburgerStyles.midSpan : {}}></span>

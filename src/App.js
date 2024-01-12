@@ -15,7 +15,6 @@ function App() {
 
   const scrollToElement = () => {
     if (contactRef.current) {
-      navToggle()
       contactRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };

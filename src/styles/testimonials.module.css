@@ -12,7 +12,7 @@
     width: 100%;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: var(--white-space);
+    gap: 2rem;
 }
 
 .testimonial {

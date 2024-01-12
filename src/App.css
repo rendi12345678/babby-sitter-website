@@ -148,7 +148,7 @@ table {
   --title-space: clamp(1.5rem, 2vw, 2rem);
   --h2: clamp(2.4rem, 3.2vw, 3.2rem);
   --accent-color: #e708b7;
-  --secondary-color: #eee;
+  --secondary-color: #f5f5f5;
   --primary-color: #fff;
   --contrast-color: #000;
   --date-picker-color: invert(30%);
