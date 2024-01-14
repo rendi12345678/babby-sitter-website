@@ -151,6 +151,7 @@ table {
   --secondary-color: #f5f5f5;
   --primary-color: #fff;
   --contrast-color: #000;
+  --contrast-border-color: #fff;
   --date-picker-color: invert(30%);
   --button-color: #fff;
   --headings-color: #333;

@@ -74,13 +74,13 @@ function App() {
   };
 
   const showFullSizeImage = (imageUrl) => {
-    setFullSizeImageUrl(imageUrl)
+    setFullSizeImageUrl(imageUrl);
     dispatch(showFullSizeImageAction(true));
   };
 
-  const setFullSizeImageUrl = imageUrl => {
+  const setFullSizeImageUrl = (imageUrl) => {
     dispatch(setImageUrlAction(imageUrl));
-  }
+  };
 
   const closeFullSizeImage = () => {
     dispatch(setImageUrlAction(""));
@@ -102,16 +102,18 @@ function App() {
     navToggle,
     isDisplay,
     images,
-    setFullSizeImageUrl
+    setFullSizeImageUrl,
   };
 
   return (
-    <AppContext.Provider value={contextValue}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+    <>
+      <AppContext.Provider value={contextValue}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       {isShowFullSizeImage ? <FullSizeImage imageUrl={imageUrl} /> : null}
-    </AppContext.Provider>
+      </AppContext.Provider>
+    </>
   );
 }
 
