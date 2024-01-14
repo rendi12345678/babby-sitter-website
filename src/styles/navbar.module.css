@@ -4,7 +4,7 @@
     display: flex;
     background: var(--secondary-color);
     justify-content: space-between;
-    z-index: 999999;
+    z-index: 99;
     position: relative;
     align-items: center;
     max-width: var(--max-width);
