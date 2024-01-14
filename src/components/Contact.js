@@ -59,7 +59,7 @@ export const Contact = () => {
                 />
               </div>
               <figcaption>
-                jl Gunung Andakasa, Gang Jepun No. 10, Denpasar Barat, Denpasar,
+                Jl Gunung Andakasa, Gang Jepun No. 10, Denpasar Barat, Denpasar,
                 Bali 80118, Indonesia
               </figcaption>
             </figure>

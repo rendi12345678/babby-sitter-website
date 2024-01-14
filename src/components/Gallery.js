@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import galleryStyles from "../styles/gallery.module.css";
-import axios from "axios";
+import { AppContext } from './../App';
 
 export const Gallery = () => {
+   const {images, showFullSizeImage} = useContext(AppContext)
+
   return (
     <section className ={galleryStyles.gallery} id="gallery">
       <div className="section-title">
@@ -12,44 +14,52 @@ export const Gallery = () => {
       <div className={galleryStyles["gallery-list"]}>
         <figure className={galleryStyles.item}>
         <img
-            src="https://source.unsplash.com/random/800x600"
+            src={images[3]}
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[3])}
           />
         </figure>
         <figure className={galleryStyles.item}>
-          <img
-            src="https://source.unsplash.com/random/800x601"
+           <img
+            src={images[4]}
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[4])}
           />
         </figure>
         <figure className={galleryStyles.item}>
-          <img
-            src="https://source.unsplash.com/random/800x602"
+           <img
+            src={images[5]}
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[5])}
           />
         </figure>
         <figure className={galleryStyles.item}>
-          <img
-            src="https://source.unsplash.com/random/800x603"
+           <img
+            src={images[6]}
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[6])}
           />
         </figure>
         <figure className={galleryStyles.item}>
-          <img
-            src="https://source.unsplash.com/random/800x604"
+           <img
+            src={images[7]}
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[7])}
           />
         </figure>
         <figure className={galleryStyles.item}>
-          <img
-            src="https://source.unsplash.com/random/800x605"
+           <img
+            src={images[8]}
+            
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[8])}
           />
         </figure>
         <figure className={galleryStyles.item}>
-          <img
-            src="https://source.unsplash.com/random/800x606"
+           <img
+            src={images[9]}
             alt="gallery item"
+            onClick={() => showFullSizeImage(images[9])}
           />
         </figure>
       </div>

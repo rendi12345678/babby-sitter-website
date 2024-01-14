@@ -3,6 +3,66 @@
     top: 0;
     left: 0;
     right: 0;
+    width: 100svw;
+    height: 100svh;
     bottom: 0;
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, .8);
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    align-items: center;
+    z-index: 999999999999999999999999;
+    box-sizing: border-box;
+}
+
+.overlay figure {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: var(--white-space);
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.overlay img {
+    box-sizing: border-box;
+    height: 60svh;
+    max-width: 100%;
+    @media (width < 768px) {
+        height: 55svh;
+        max-width: 100%;
+    }
+    height: 45svh;
+    @media (width < 700px) {
+        height: 50svh;
+        height: 45svh;
+        max-width: 100%;
+    }
+    @media (width < 650px) {
+        height: 45svh;
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    gap: 1.5rem;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (width < 650px) {
+        top: -3rem;
+    }
+}
+
+.buttons button {
+  padding: .2rem 1rem;
+  font-size: calc(var(--body-text) - .2rem);
+  background: transparent;
+  font-weight: 400;
+  border: .1rem solid var(--contrast-color);
 }
