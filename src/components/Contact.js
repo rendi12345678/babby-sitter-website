@@ -4,7 +4,7 @@ import { AppContext } from "../App.js";
 
 const BingMapsReact = lazy(() => import("bingmaps-react"))
 
-export const Contact = () => {
+const Contact = () => {
   const apiKey =
     "AqoMZX6lawABgf7PAvs5Nf9rS3kS9mYgaHSLnVKw1YbW1ZHzbfMhLxTW6FK20fj_";
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -125,3 +125,5 @@ export const Contact = () => {
     </>
   );
 };
+
+export default Contact;

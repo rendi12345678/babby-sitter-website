@@ -1,7 +1,7 @@
 import React from "react";
 import servicesStyles from "../styles/services.module.css";
 
-export const Services = () => {
+const Services = () => {
   return (
     <section className={servicesStyles.services} id="services">
       <div className="section-title">
@@ -32,3 +32,5 @@ export const Services = () => {
     </section>
   );
 };
+
+export default Services;

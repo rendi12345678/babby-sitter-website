@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import aboutStyles from "../styles/about.module.css";
 import { AppContext } from "../App";
 
-export const About = () => {
+const About = () => {
   const { images, showFullSizeImage } = useContext(AppContext);
 
   return (
@@ -44,3 +44,5 @@ export const About = () => {
     </section>
   );
 };
+
+export default About;

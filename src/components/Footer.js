@@ -1,7 +1,7 @@
 import React from "react";
 import footerStyles from "../styles/footer.module.css"
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <section className={footerStyles.footer}>
       <p>
@@ -11,3 +11,5 @@ export const Footer = () => {
     </section>
   );
 };
+
+export default Footer;

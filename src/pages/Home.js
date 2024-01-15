@@ -1,39 +1,60 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import containerStyles from "../styles/container.module.css";
-import { Navbar } from "../components/Navbar.js";
-import { Hero } from "../components/Hero.js";
-import { About } from "../components/About.js";
-import { Certificate } from "../components/Certificate.js";
-import { Testimonials } from "../components/Testimonials.js";
-import { Gallery } from "../components/Gallery.js";
-import { Contact } from "../components/Contact.js";
-import { Footer } from "../components/Footer.js";
-import { Services } from "../components/Services.js";
 
-export const Home = () => {
+const Navbar = lazy(() => import("../components/Navbar.js"));
+const Hero = lazy(() => import("../components/Hero.js"));
+const About = lazy(() => import("../components/About.js"));
+const Certificate = lazy(() => import("../components/Certificate.js"));
+const Testimonials = lazy(() => import("../components/Testimonials.js"));
+const Gallery = lazy(() => import("../components/Gallery.js"));
+const Contact = lazy(() => import("../components/Contact.js"));
+const Footer = lazy(() => import("../components/Footer.js"));
+const Services = lazy(() => import("../components/Services.js"));
+
+const Home = () => {
   return (
     <>
       <div className={containerStyles["navbar-container"]}>
-        <Navbar />
+        <Suspense fallback={<div>Loading Navbar...</div>}>
+          <Navbar />
+        </Suspense>
       </div>
       <div className={containerStyles["hero-container"]}>
-        <Hero />
+        <Suspense fallback={<div>Loading Hero...</div>}>
+          <Hero />
+        </Suspense>
       </div>
       <div className={containerStyles.container}>
-        <About />
-        <Services />
-        <Certificate />
+        <Suspense fallback={<div>Loading About...</div>}>
+          <About />
+        </Suspense>
+        <Suspense fallback={<div>Loading Services...</div>}>
+          <Services />
+        </Suspense>
+        <Suspense fallback={<div>Loading Certificate...</div>}>
+          <Certificate />
+        </Suspense>
       </div>
       <div className={containerStyles.container2}>
-        <Testimonials />
+        <Suspense fallback={<div>Loading Testimonials...</div>}>
+          <Testimonials />
+        </Suspense>
       </div>
       <div className={containerStyles.container}>
-        <Gallery />
-        <Contact />
+        <Suspense fallback={<div>Loading Gallery...</div>}>
+          <Gallery />
+        </Suspense>
+        <Suspense fallback={<div>Loading Contact...</div>}>
+          <Contact />
+        </Suspense>
       </div>
       <div className={containerStyles.footerContainer}>
-        <Footer />
+        <Suspense fallback={<div>Loading Footer...</div>}>
+          <Footer />
+        </Suspense>
       </div>
     </>
   );
 };
+
+export default Home;

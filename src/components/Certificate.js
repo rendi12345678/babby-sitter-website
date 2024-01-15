@@ -1,7 +1,7 @@
 import React from "react";
 import certificateStyles from "../styles/certificate.module.css";
 
-export const Certificate = () => {
+const Certificate = () => {
   return (
     <section className={certificateStyles.certificate} id="certificate">
       <div className="section-title">
@@ -14,3 +14,5 @@ export const Certificate = () => {
     </section>
   );
 };
+
+export default Certificate;

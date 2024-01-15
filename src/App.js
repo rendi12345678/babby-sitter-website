@@ -1,7 +1,7 @@
 import "./App.css";
-import React, { createContext, useReducer, useRef, useState } from "react";
+import React, { Suspense, lazy, createContext, useReducer, useRef, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home.js";
+import Home from "./pages/Home.js";
 import { FullSizeImage } from "./components/FullSizeImage";
 
 export const AppContext = createContext();
@@ -109,7 +109,11 @@ function App() {
     <>
       <AppContext.Provider value={contextValue}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={
+            <Suspense fallback={<p>Loading...</p>}>
+              <Home />
+            </Suspense>   
+          } />
         </Routes>
       {isShowFullSizeImage ? <FullSizeImage imageUrl={imageUrl} /> : null}
       </AppContext.Provider>

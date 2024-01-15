@@ -19,8 +19,8 @@ const hamburgerStyles = {
   },
 };
 
-export const Navbar = () => {
-  const { contactRef, scrollToElement, navToggle, isDisplay } = useContext(AppContext);
+const Navbar = () => {
+  const { navToggle, isDisplay } = useContext(AppContext);
 
   return (
     <nav className={navStyles.navbar}>
@@ -70,3 +70,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;

@@ -3,7 +3,7 @@ import heroStyles from "../styles/hero.module.css";
 import { AppContext } from "../App";
 
 
-export const Hero = () => {
+const Hero = () => {
   const { scrollToElement, showFullSizeImage, images } =
   useContext(AppContext);
 
@@ -26,3 +26,5 @@ export const Hero = () => {
     </>
   );
 };
+
+export default Hero;

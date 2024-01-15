@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import galleryStyles from "../styles/gallery.module.css";
 import { AppContext } from './../App';
 
-export const Gallery = () => {
+const Gallery = () => {
    const {images, showFullSizeImage} = useContext(AppContext)
 
   return (
@@ -66,3 +66,5 @@ export const Gallery = () => {
     </section>
   );
 };
+
+export default Gallery;

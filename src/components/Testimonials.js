@@ -1,7 +1,7 @@
 import React from "react";
 import testimonialsStyles from "../styles/testimonials.module.css";
 
-export const Testimonials = () => {
+const Testimonials = () => {
   return (
     <section className={testimonialsStyles.testimonials} id="testimonials">
       <div className="section-title">
@@ -41,3 +41,5 @@ export const Testimonials = () => {
     </section>
   );
 };
+
+export default Testimonials;
